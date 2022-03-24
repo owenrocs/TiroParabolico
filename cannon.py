@@ -71,8 +71,12 @@ def move():
     draw()
 
     for target in targets:
+        # Add infinite continuity for the game
         if not inside(target):
-            return
+            # Max value de screen
+            target.x = 200
+            # Random value for y between -190 & -10
+            target.y = randrange(-19, 0) * 10
 
     ontimer(move, 30) # Aumenta la velocidad del juego (proyecti y objetivos)
 
